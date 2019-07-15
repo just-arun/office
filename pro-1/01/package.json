@@ -1,0 +1,37 @@
+{
+  "name": "basics",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run prod",
+    "server-dev": "babel-node ./src/server.js",
+    "server-prod": "node ./build/server.js",
+    "dev": "cross-env NODE_ENV=development npm run server-dev",
+    "clean": "rimraf build",
+    "build": "babel ./src --out-dir build",
+    "prod": "cross-env NODE_ENV=production npm run clean && npm run build && npm run server-prod",
+    "watch": "nodemon"
+  },
+  "dependencies": {
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "mongodb": "^3.2.7",
+    "mongoose": "5.6.2",
+    "morgan": "~1.9.1",
+    "object-sizeof": "^1.4.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
+    "cross-env": "^5.2.0",
+    "eslint": "6.0.1",
+    "eslint-config-airbnb-base": "13.2.0",
+    "eslint-plugin-import": "2.18.0",
+    "nodemon": "1.19.1",
+    "rimraf": "2.6.3"
+  }
+}
